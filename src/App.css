@@ -103,9 +103,6 @@ select {
   opacity: 1;
 }
 
-/**/
-
-
 .agent-name {
   font-weight: 600;
   color: green;
@@ -129,9 +126,6 @@ select {
 .agent-name:hover::after {
   opacity: 1;
 }
-
-
-/**/
 
 .lead-row {
   display: grid;
@@ -275,4 +269,189 @@ main {
   flex-direction: column;
   margin-top: 80px;
   margin-right: 80px;
+}
+
+/*charts*/
+
+.chart-container {
+  position: relative;
+  margin: 1rem auto;
+}
+
+.pie-chart-container {
+  width: 250px;
+  height: 250px;
+  max-width: 100%;
+}
+
+.bar-chart-container {
+  width: 400px;
+  height: 250px;
+  max-width: 100%;
+}
+
+.chart-label {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: red;
+}
+
+.report-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+/*media queries for make it mobile responsive*/
+
+/* Tablet and below (768px) */
+@media (max-width: 768px) {
+  .flexTwoboxes {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .report-container {
+    padding: 0.5rem;
+  }
+
+    .pie-chart-container {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .bar-chart-container {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .bg-leadList {
+    width: 100%;
+  }
+
+  .bg-reportScreen {
+    width: 100%;
+  }
+
+  .agent-row {
+    display: flex;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .lead-row {
+    display: flex;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .dashboard-sidebar {
+    width: 70px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+   .pages-sidebar {
+    width: 80px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    padding: 4px;
+    display: flex;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .form-row label {
+    width: 100%;
+  }
+
+  .ulFormatting {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .lead-row .lead-card {
+    padding: 6px;
+  }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+  .container {
+    margin: 0;
+    padding: 6px;
+  }
+
+  .report-container {
+    padding: 0.25rem;
+  }
+
+    .pie-chart-container {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+    .bg-reportScreen {
+    width: 100%;
+  }
+
+  .bar-chart-container {
+    max-width: 200px;
+    max-height: 150px;
+  }
+
+  .selectDiv {
+  width: 80px;  
+}
+
+  .lead-card,
+  .agent-card {
+    padding: 6px;
+  }
+
+  /*lead card which is inside the lead row for mobile*/
+  .lead-row .lead-card {
+    padding: 6px;
+  }
+
+  /*font size*/
+
+    /* Global text scaling */
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+  }
+
+  /* Inputs & selects scale */
+  input,
+  select {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  /* Buttons scale */
+  .addButton,
+  .smallButton,
+  .submitButton,
+  .quick-filter {
+    font-size: 0.85rem;
+    padding: 2px;
+    border-radius: 8px;
+  }
+
 }

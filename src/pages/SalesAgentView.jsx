@@ -30,13 +30,13 @@ const SalesAgent = () => {
 
 
   const agent = agents.find((a) => a._id === agentId);
-//
+
 const agentLeads = leads.filter(
   (lead) =>
     Array.isArray(lead.salesAgent) &&
     lead.salesAgent.some((agent) => agent._id === agentId)
 );
-//
+
   const filteredLeads = agentLeads.filter((lead) => { 
     const statusMatch = status ? lead.status === status : true;
     const priorityMatch = priority ? lead.priority === priority : true;

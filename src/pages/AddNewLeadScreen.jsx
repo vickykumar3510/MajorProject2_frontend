@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import SalesAgentContext from "../contexts/SalesAgentContext";
 import LeadContext from "../contexts/LeadContext";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddNewLeadScreen = () => {
   const { agents, loading } = useContext(SalesAgentContext);
@@ -44,7 +45,7 @@ const AddNewLeadScreen = () => {
       !newLead.tags.length ||
       !newLead.timeToClose
     ) {
-      alert("Please fill all required fields.");
+      toast.error("Please fill all required fields");
       return;
     }
 
@@ -54,7 +55,7 @@ const AddNewLeadScreen = () => {
         timeToClose: Number(newLead.timeToClose),
       });
 
-      alert("Lead created successfully.");
+      toast.success("Lead created successfully");
 
       
       setNewLead({
@@ -68,7 +69,7 @@ const AddNewLeadScreen = () => {
       });
     } catch (error) {
       console.log(error);
-      alert("Error creating lead.");
+      toast.error("Error creating lead");
     }
   };
 

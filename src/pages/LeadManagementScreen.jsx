@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import LeadContext from "../contexts/LeadContext";
 import SalesAgentContext from "../contexts/SalesAgentContext";
 import CommentContext from "../contexts/CommentsContext";
+import { toast } from "react-toastify";
 
 const LeadManagementScreen = () => {
   const { leadId } = useParams();
@@ -70,7 +71,7 @@ if (!lead) {
   const handleUpdate = async () => {
     try {
       if (!formData.timeToClose || Number(formData.timeToClose) < 1) {
-        alert("Time to Close must be at least 1");
+        toast.error("Time to Close must be at least 1");
         return;
       }
 
@@ -87,17 +88,17 @@ if (!lead) {
       await updateLead(leadId, updatedData);
 
       setIsEditing(false);
-      alert("Lead updated successfully");
+      toast.success("Lead updated successfully");
     } catch (error) {
       console.error(error);
-      alert("Failed to update lead");
+      toast.error("Failed to update lead");
     }
   };
 
 
   const handleAddComment = () => {
     if (!newComment || !commentAuthor) {
-      alert("Please enter comment and select author");
+      toast.error("Please enter comment and select author");
       return;
     }
 

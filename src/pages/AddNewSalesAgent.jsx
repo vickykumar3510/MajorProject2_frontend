@@ -2,6 +2,7 @@ import "../App.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import SalesAgentContext from "../contexts/SalesAgentContext";
+import { toast } from "react-toastify";
 
 const AddNewSalesAgent = () => {
   const { addAgent } = useContext(SalesAgentContext);
@@ -20,14 +21,14 @@ const AddNewSalesAgent = () => {
     event.preventDefault();
 
     if (!newAgent.name || !newAgent.email) {
-      alert("Please fill in both name and email.");
+      toast.error("Please fill in both name and email.");
       return;
     }
 
     try {
       await addAgent(newAgent);
 
-      alert("New Agent added.");
+      toast.success("New Agent added.");
 
       setNewAgent({
         name: "",
@@ -35,7 +36,7 @@ const AddNewSalesAgent = () => {
       });
     } catch (error) {
       console.log(error);
-      alert("Error creating new agent.");
+      toast.error("Error creating new agent.");
     }
   };
 

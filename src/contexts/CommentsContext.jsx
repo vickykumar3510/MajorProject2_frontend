@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const CommentContext = createContext();
 
@@ -26,7 +27,7 @@ export const CommentProvider = ({ children, leadId }) => {
   
   const addComment = async (commentText, author) => {
     if (!leadId) return;
-    alert("Comment added")
+    toast.success("Comment added")
 
     try {
       const res = await fetch(

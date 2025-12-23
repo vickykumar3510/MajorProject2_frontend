@@ -14,6 +14,9 @@ import { SalesAgentProvider } from './contexts/SalesAgentContext.jsx';
 import SalesAgentView from './pages/SalesAgentView.jsx'
 import AddNewSalesAgent from './pages/AddNewSalesAgent.jsx';
 import LeadManagementWrapper from './pages/LeadManagementWrapper.jsx';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./charts/ChartSetup.jsx";
 
 
 const router = createBrowserRouter([
@@ -67,6 +70,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LeadProvider>
     <SalesAgentProvider>
+       <ToastContainer position="top-right" autoClose={3000} />
     <RouterProvider router={router}  />
     </SalesAgentProvider>
     </LeadProvider>
