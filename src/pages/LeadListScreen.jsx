@@ -116,8 +116,8 @@ const LeadListScreen = () => {
                 : d.salesAgent?.name || "Unassigned";
 
               return (
-                <div className="lead-row">
-                <div className="lead-card" key={d._id}>
+                <div className="lead-row" key={d._id}>
+                <div className="lead-card">
                   <Link className="removeLine lead-name-listScreen" to={`/leadmanagementscreen/${d._id}`}>
                     {d.name}
                   </Link>

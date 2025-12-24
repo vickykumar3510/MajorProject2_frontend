@@ -64,7 +64,7 @@ export const LeadProvider = ({ children }) => {
   };
 
   return (
-    <LeadContext.Provider value={{ leads, loading, addLead, updateLead }}>
+    <LeadContext.Provider value={{ leads, loading, addLead, updateLead, setLeads }}>
       {children}
     </LeadContext.Provider>
   );

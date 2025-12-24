@@ -17,6 +17,7 @@ import LeadManagementWrapper from './pages/LeadManagementWrapper.jsx';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./charts/ChartSetup.jsx";
+import Settings from './pages/Settings.jsx';
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
   {
     path: "/leadmanagementscreen/:leadId",
     element: <LeadManagementWrapper/>
+  },
+  {
+    path: "/settings",
+    element: <Settings/>
   }
 ])
 

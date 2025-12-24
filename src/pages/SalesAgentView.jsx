@@ -75,8 +75,8 @@ const agentLeads = leads.filter(
             ) : (
               <>
                 {sortedLeads.map((lead) => (
-                  <div className="lead-row">
-                  <div className="lead-card lead-name" key={lead._id}>
+                  <div className="lead-row" key={lead._id}>
+                  <div className="lead-card lead-name">
                     {lead.name}
                   </div>
                   <div className="lead-card" style={{color: "red"}}> {lead.status}
@@ -111,7 +111,7 @@ const agentLeads = leads.filter(
             <p><strong>Sort by:</strong></p>
 
        
-            <button class="submitButton" onClick={toggleTimeSort}>
+            <button className="submitButton" onClick={toggleTimeSort}>
               Time to Close{" "}
               {timeSort === "asc" ? "⬆" : timeSort === "desc" ? "⬇" : ""}
             </button>

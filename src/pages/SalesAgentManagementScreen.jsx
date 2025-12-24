@@ -5,9 +5,9 @@ import SalesAgentContext from "../contexts/SalesAgentContext"
 
 const SalesAgentManagementScreen = () => {
     const {loading, agents} = useContext(SalesAgentContext)
-    console.log(agents)
     return(
         <div className="page-wrapper bg-salesAgentManagement">
+            {loading && <p>Loading...</p>}
         <main>
             <div className="pageCenter">
             <div className="container">
@@ -22,8 +22,8 @@ const SalesAgentManagementScreen = () => {
                     <div>
                         <h3>Sales Agent List</h3>
                         {agents.map((d) => (
-                            <div className="agent-row">
-                            <div className="agent-card" key={d._id}><Link className="removeLine agent-name" to={`/salesagentview/${d._id}`}>{d.name}</Link></div>
+                            <div className="agent-row" key={d._id}>
+                            <div className="agent-card"><Link className="removeLine agent-name" to={`/salesagentview/${d._id}`}>{d.name}</Link></div>
                             <div className="agent-card"> {d.email}</div>
                             </div>
                         ))}

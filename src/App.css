@@ -56,6 +56,16 @@ input {
   border-radius: 5px;
 }
 
+.deleteBtn:hover {
+  background-color: greenyellow;
+}
+
+.deleteBtn{
+  background-color: PaleVioletRed;
+  border-radius: 5px;
+  border-color: black;
+}
+
 select {
   border-radius: 5px;
 }
@@ -226,6 +236,10 @@ main {
 
 .bg-leadByStatus {
   background-color: #ffff4d;
+}
+
+.bg-SettingsPage {
+  background-color: #BCECAC;
 }
 
 .bg-salesAgentView {

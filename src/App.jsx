@@ -28,10 +28,10 @@ function App() {
             <h3>Sidebar</h3>
             <div className="dashboard-sidebar">
             <Link to="/leadlistscreen" className="removeLine">Leads</Link><br/>
-            <Link to="/none" className="removeLine">Sales</Link><br/>
+            <Link to="/salesagentmanagementscreen" className="removeLine">Sales</Link><br/>
             <Link to="/salesagentmanagementscreen" className="removeLine">Agents</Link><br/>
             <Link to="/reportscreen" className="removeLine">Reports</Link><br/>
-            <Link to="" className="removeLine">Settings</Link>
+            <Link to="/settings" className="removeLine">Settings</Link>
             </div>
           </div>
           <div>

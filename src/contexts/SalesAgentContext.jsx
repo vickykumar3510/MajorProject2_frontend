@@ -42,7 +42,7 @@ export const SalesAgentProvider = ({ children }) => {
   };
 
   return (
-    <SalesAgentContext.Provider value={{ loading, agents, addAgent }}>
+    <SalesAgentContext.Provider value={{ loading, agents, addAgent, setAgents }}>
       {children}
     </SalesAgentContext.Provider>
   );
